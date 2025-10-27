@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Akses</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background-color: #00b894;
+      color: white;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #019172;
+    }
+
+    .error {
+      margin-top: 10px;
+      color: #ff7675;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .login-container {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="login-container">
+    <img src="images.png" width="150" height="150">
+    <h2>MARKET⚡BLAST</h2>
+    <input type="text" id="username" placeholder="Username..." />
+    <input type="password" id="kode" placeholder="Kode akses..." />
+    <button onclick="cekLogin()">Go to page</button>
+    <div class="error" id="error-msg"></div>
+      <marquee bgcolor="gold" scrollamount="5" style="color:#000;">Input username dan kode akses untuk dapat masuk ke menu marketblast</marquee>
+  </div>
+
+  <script>
+    const validUsername = "admin5";   // Ganti sesuai kebutuhan
+    const validKode = "premium";       // Ganti sesuai kebutuhan
+
+    function cekLogin() {
+      const user = document.getElementById("username").value.trim();
+      const kode = document.getElementById("kode").value.trim();
+      const error = document.getElementById("error-msg");
+
+      if (user === validUsername && kode === validKode) {
+        window.location.href = "https://marketblastools.github.io/marketblastools.apps.backup/"; // Halaman tujuan
+      } else {
+        error.textContent = "Username atau kode akses salah.";
+      }
+    }
+  </script>
+  
+  <script>
+                var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?91389';
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = url;
+                var options = {
+                "enabled":true,
+                "chatButtonSetting":{
+                    "backgroundColor":"#ff4900",
+                    "ctaText":"Request akses",
+                    "borderRadius":"25",
+                    "marginLeft": "0",
+                    "marginRight": "20",
+                    "marginBottom": "10",
+                    "ctaIconWATI":false,
+                    "position":"right"
+                },
+                "brandSetting":{
+                    "brandName":"Marketblast",
+                    "brandSubTitle":"undefined",
+                    "brandImg":"https://www.wati.io/wp-content/uploads/2023/04/Wati-logo.svg",
+                    "welcomeText":"Hallo kak!\nAda yang bisa kami bantu?",
+                    "messageText":"Hallo,%0ASaya ingin mendapatkan kode akses dengan membayar 10K. Bagaimana caranya ?",
+                    "backgroundColor":"#ff4900",
+                    "ctaText":"Developer",
+                    "borderRadius":"25",
+                    "autoShow":false,
+                    "phoneNumber":"639095860364"
+                }
+                };
+                s.onload = function() {
+                    CreateWhatsappChatWidget(options);
+                };
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            </script>
+</body>
+</html>
